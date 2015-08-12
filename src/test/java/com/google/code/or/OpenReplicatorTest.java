@@ -20,13 +20,13 @@ public class OpenReplicatorTest {
 	public static void main(String args[]) throws Exception {
 		//
 		final OpenReplicator or = new OpenReplicator();
-		or.setUser("nextop");
-		or.setPassword("nextop");
-		or.setHost("192.168.1.216");
+		or.setUser("so");
+		or.setPassword("123456");
+		or.setHost("n3.secoo-inc.com");
 		or.setPort(3306);
-		or.setServerId(6789);
+		or.setServerId(999);
 		or.setBinlogPosition(120);
-		or.setBinlogFileName("mysql-bin.000003");
+		or.setBinlogFileName("mysql-bin.000005");
 		or.setBinlogEventListener(new BinlogEventListener() {
 		    public void onEvents(BinlogEventV4 event) {
 		    	LOGGER.info("{}", event);

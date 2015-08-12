@@ -16,7 +16,12 @@
  */
 package com.google.code.or.binlog.impl.parser;
 
+import java.io.IOException;
+
 import com.google.code.or.binlog.BinlogEventParser;
+import com.google.code.or.binlog.BinlogEventV4Header;
+import com.google.code.or.binlog.BinlogParserContext;
+import com.google.code.or.io.XInputStream;
 
 /**
  * 
@@ -39,4 +44,6 @@ public abstract class AbstractBinlogEventParser implements BinlogEventParser {
 	public final int getEventType() {
 		return eventType;
 	}
+	
+	abstract public void parse(XInputStream is, BinlogEventV4Header header, BinlogParserContext context) throws IOException;
 }
